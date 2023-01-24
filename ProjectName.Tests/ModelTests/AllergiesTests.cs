@@ -71,6 +71,19 @@ namespace Allergies.Tests
     
     CollectionAssert.AreEqual(expected: newList, actual: result);
   }
+  [TestMethod]
+    public void CheckForStrawberries_List()
+  {
+    //Arrange
+    Allergens allergies = new Allergens();
+    List<string> allergiesList = new List<string>();
+    List<string> newList = new List<string>();
+    newList.Add(item: "strawberries");
+    
+    List<string> result = allergies.AllergicTo(Score: 8,  allergiesList: allergiesList);
+    
+    CollectionAssert.AreEqual(expected: newList, actual: result);
+  }
 
 
   }
