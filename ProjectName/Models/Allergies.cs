@@ -27,6 +27,10 @@ namespace Allergies.Models
       Score -= 16;
       allergiesList.Add(item: "tomatoes");
       AllergicTo(Score: Score, allergiesList: allergiesList);
+    } else if(Score >= 8){
+      Score -= 8;
+      allergiesList.Add(item: "strawberries");
+      AllergicTo(Score: Score, allergiesList: allergiesList);
     } else {
       return allergiesList;
     }
