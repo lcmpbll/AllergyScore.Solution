@@ -1,23 +1,30 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using ProjectName;
+using System;
+using System.Collections.Generic;
+using Allergies.Models;
 
-namespace ProjectName.Tests
+namespace Allergies.Tests
 {
   [TestClass]
-  public class ClassNameTests
+  public class AllergiesTests
   {
+    [TestMethod]
+  public void ItemConstructor_CreateInstanceOfAllergies_Item()
+  {
+    //Arrange
+    Allergens allergies = new Allergens();
+    List<string> newList = new List<string>();
+    newList.Add(item: "eggs");
+    List<string> result = allergies.AllergicTo(Score: 1);
+    
+    CollectionAssert.AreEqual(expected: newList, actual: result);
+  }
 //     [TestMethod]
-// public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
-// {
-//   // any necessary logic to prep for test; instantiating new classes, etc.
-//   Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
-  //}
-    // [TestMethod]
-    // public void ItemConstructor_CreatesInstanceOfItem_Item()
-    // {
-    //   Item newItem = new Item();
-    //   Assert.AreEqual(typeof(Item), newItem.GetType());
-    // }
+//     public void ItemConstructor_CreatesInstanceOfItem_Item()
+//     {
+//       Item newItem = new Item();
+//       Assert.AreEqual(typeof(Item), newItem.GetType());
+//     }
 
 //     [TestMethod]
 //     public void GetDescription_ReturnsDescription_String()
