@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System;
 
 namespace Allergies.Models
 {
@@ -24,7 +23,10 @@ namespace Allergies.Models
       Score -= 32;
       allergiesList.Add(item: "chocolate");
       AllergicTo(Score: Score, allergiesList: allergiesList);
-   
+    } else if(Score >= 16){
+      Score -= 16;
+      allergiesList.Add(item: "tomatoes");
+      AllergicTo(Score: Score, allergiesList: allergiesList);
     } else {
       return allergiesList;
     }
