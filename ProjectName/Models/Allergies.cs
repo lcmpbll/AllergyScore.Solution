@@ -8,8 +8,6 @@ namespace Allergies.Models
     public List<string> allergiesList = new List<string>();
    
    
-   
-   
    public List<string> AllergicTo(int Score, List<string> allergiesList) {
     if(Score >= 128){
       Score -= 128;
@@ -32,7 +30,7 @@ namespace Allergies.Models
       allergiesList.Add(item: "strawberries");
       AllergicTo(Score: Score, allergiesList: allergiesList);
      } else if(Score >= 4){
-      Score -= 8;
+      Score -= 4;
       allergiesList.Add(item: "shellfish");
       AllergicTo(Score: Score, allergiesList: allergiesList);
      } else if(Score >= 2){
