@@ -84,6 +84,20 @@ namespace Allergies.Tests
     
     CollectionAssert.AreEqual(expected: newList, actual: result);
   }
+   [TestMethod]
+    public void CheckForShellfish_List()
+  {
+    //Arrange
+    Allergens allergies = new Allergens();
+    List<string> allergiesList = new List<string>();
+    List<string> newList = new List<string>();
+    newList.Add(item: "shellfish");
+    
+    List<string> result = allergies.AllergicTo(Score: 4,  allergiesList: allergiesList);
+    
+    CollectionAssert.AreEqual(expected: newList, actual: result);
+  }
+
 
 
   }
