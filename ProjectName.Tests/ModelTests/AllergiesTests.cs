@@ -9,13 +9,26 @@ namespace Allergies.Tests
   public class AllergiesTests
   {
     [TestMethod]
-  public void ItemConstructor_CreateInstanceOfAllergies_Item()
+  public void CheckForCats_List()
   {
     //Arrange
     Allergens allergies = new Allergens();
+    List<string> allergiesList = new List<string>();
     List<string> newList = new List<string>();
-    newList.Add(item: "eggs");
-    List<string> result = allergies.AllergicTo(Score: 1);
+    newList.Add(item: "cats");
+    List<string> result = allergies.AllergicTo(Score: 128,  allergiesList: allergiesList);
+    
+    CollectionAssert.AreEqual(expected: newList, actual: result);
+  }
+      [TestMethod]
+  public void CheckForPollen_List()
+  {
+    //Arrange
+    Allergens allergies = new Allergens();
+    List<string> allergiesList = new List<string>();
+    List<string> newList = new List<string>();
+    newList.Add(item: "pollen");
+    List<string> result = allergies.AllergicTo(Score: 128,  allergiesList: allergiesList);
     
     CollectionAssert.AreEqual(expected: newList, actual: result);
   }
