@@ -28,7 +28,20 @@ namespace Allergies.Tests
     List<string> allergiesList = new List<string>();
     List<string> newList = new List<string>();
     newList.Add(item: "pollen");
-    List<string> result = allergies.AllergicTo(Score: 128,  allergiesList: allergiesList);
+    List<string> result = allergies.AllergicTo(Score: 64,  allergiesList: allergiesList);
+    
+    CollectionAssert.AreEqual(expected: newList, actual: result);
+  }
+    [TestMethod]
+   public void CheckForCatsAndPollen_List()
+  {
+    //Arrange
+    Allergens allergies = new Allergens();
+    List<string> allergiesList = new List<string>();
+    List<string> newList = new List<string>();
+    newList.Add(item: "cats");
+    newList.Add(item: "pollen");
+    List<string> result = allergies.AllergicTo(Score: 192,  allergiesList: allergiesList);
     
     CollectionAssert.AreEqual(expected: newList, actual: result);
   }

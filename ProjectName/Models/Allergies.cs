@@ -16,6 +16,10 @@ namespace Allergies.Models
       Score -= 128;
       allergiesList.Add(item: "cats");
       AllergicTo( Score: Score, allergiesList: allergiesList );
+    } else if(Score >= 64){
+      Score -= 64;
+      allergiesList.Add(item: "pollen");
+      AllergicTo(Score: Score, allergiesList: allergiesList);
     } else {
       return allergiesList;
     }
